@@ -1,4 +1,4 @@
-FROM amazon/aws-cli:2.17.45
+FROM alpine:3.18.5
 
 # ENV LABEL_MAINTAINER="niveksan" \
 #     LABEL_IMAGE_NAME="niveksan/scripted-aws-cli" \
@@ -7,7 +7,8 @@ FROM amazon/aws-cli:2.17.45
 
 # install bash (for script)
 RUN apk add --no-cache \
-  bash
+  bash \
+  aws-cli
 
 # copy scripted-aws-cli script to crond daily folder
 COPY scripted-aws-cli.sh /
