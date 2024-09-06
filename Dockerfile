@@ -8,9 +8,7 @@ FROM alpine:3.18.5
 # install bash (for script)
 RUN apk add --no-cache \
   bash \
-  groff \
-
-RUN apk add --no-cache \
+  mandoc \
   aws-cli
 
 # copy scripted-aws-cli script to crond daily folder
