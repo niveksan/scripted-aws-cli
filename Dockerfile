@@ -25,4 +25,5 @@ RUN echo "0 */12 * * * /scripted-aws-cli.sh" > /etc/crontabs/root
 
 ENTRYPOINT ["/entrypoint.sh"]
 
+# create image locally:
 # docker build --network=host --no-cache -t scripted-aws-cli:arm .
