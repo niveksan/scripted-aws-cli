@@ -1,4 +1,4 @@
-FROM alpine:3.18.5
+FROM alpine:3.20.3
 
 # ENV LABEL_MAINTAINER="niveksan" \
 #     LABEL_IMAGE_NAME="niveksan/scripted-aws-cli" \
