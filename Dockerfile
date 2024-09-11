@@ -1,4 +1,4 @@
-FROM alpine:3.18.5
+FROM amazon/aws-cli:2.17.48
 
 # ENV LABEL_MAINTAINER="niveksan" \
 #     LABEL_IMAGE_NAME="niveksan/scripted-aws-cli" \
@@ -6,10 +6,10 @@ FROM alpine:3.18.5
 #     LABEL_LICENSE="GPL-3.0"
 
 # install bash (for script)
-RUN apk add --no-cache \
-  bash \
-  mandoc \
-  aws-cli
+RUN yum clean all \
+    && yum update -y \
+    && yum install -y bash \
+                      cronie
 
 # copy scripted-aws-cli script to crond daily folder
 COPY scripted-aws-cli.sh /
@@ -21,7 +21,7 @@ COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh && \
     chmod +x /scripted-aws-cli.sh
 
-RUN echo "0 */12 * * * /scripted-aws-cli.sh" > /etc/crontabs/root
+RUN echo "0 */12 * * * bash /scripted-aws-cli.sh > /tmp/scripted-aws-cli.log 2>&1" | crontab
 
 ENTRYPOINT ["/entrypoint.sh"]
 
