@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM amazon/aws-cli:2.17.48
+=======
+FROM alpine:3.20.3
+>>>>>>> main
 
 # ENV LABEL_MAINTAINER="niveksan" \
 #     LABEL_IMAGE_NAME="niveksan/scripted-aws-cli" \
