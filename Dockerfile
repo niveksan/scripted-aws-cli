@@ -21,7 +21,7 @@ COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh && \
     chmod +x /scripted-aws-cli.sh
 
-RUN echo "0 */12 * * * bash /scripted-aws-cli.sh > /tmp/scripted-aws-cli.log 2>&1" | crontab
+RUN echo "0 */12 * * * bash /scripted-aws-cli.sh" | crontab
 
 ENTRYPOINT ["/entrypoint.sh"]
 
