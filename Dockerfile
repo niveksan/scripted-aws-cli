@@ -1,4 +1,4 @@
-FROM amazon/aws-cli:2.17.58
+FROM amazon/aws-cli:2.18.12
 
 # ENV LABEL_MAINTAINER="niveksan" \
 #     LABEL_IMAGE_NAME="niveksan/scripted-aws-cli" \
