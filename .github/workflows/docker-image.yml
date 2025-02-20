@@ -33,14 +33,14 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
     #- name: Build and push
-    #  uses: docker/build-push-action@v6.13.0
+    #  uses: docker/build-push-action@v6.14.0
     #  with:
     #    platforms: linux/arm/v7
     #    push: true
     #    tags: ${{ secrets.DOCKER_HUB_USERNAME }}/scripted-aws-cli:armv7
 
     - name: Build and push
-      uses: docker/build-push-action@v6.13.0
+      uses: docker/build-push-action@v6.14.0
       with:
         platforms: linux/arm64/v8
         push: true
